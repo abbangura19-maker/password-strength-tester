@@ -1,23 +1,83 @@
-Password Strength Tester Project README
+🔐 Password Strength Tester
 
-Project Overview
+A beginner-friendly **Python** command-line tool that evaluates password strength and gives clear feedback to help users create better passwords.
 
-A Python tool to rate password strength based on length, variety, and common lists. It evaluates passwords on criteria like minimum length (12 characters), mix of uppercase/lowercase letters, digits, special characters, and avoidance of common weak passwords.
- The tool provides a rating (Weak, Medium, or Strong) and specific suggestions for improvement.
-How to Use
-Ensure Python is installed and added to your PATH.
-Open Command Prompt and navigate to the folder containing the script (e.g., cd %USERPROFILE%\Desktop).
-Run the script: python password_tester.py.
-Enter a password when prompted—you'll get the strength rating and suggestions.
-Test multiple passwords in one session; type 'quit' to exit.
-Optional: The tool includes a visual strength bar (e.g., [##########] for Strong).
+Features
+- Rates passwords as **Weak**, **Medium**, or **Strong**
+- Checks:
+  - Minimum length (≥8 characters)
+  - Uppercase letters
+  - Lowercase letters
+  - Digits
+  - Special characters
+  - Not in a list of common weak passwords
+- Gives specific improvement suggestions (e.g. "Add at least one uppercase letter")
+- Allows testing multiple passwords in one session (type `quit` to exit)
+- Includes a simple visual strength bar
 
-What I Did and Learned
+How to Run
 
-This project was a week-long beginner cybersecurity exercise in Python, starting from setup and research to a polished tool. Here's a summary of what I did and key learnings:
-Monday (Setup and Research): Installed Python, set up a text editor, created the script file, and tested a "Hello, World!" run. Researched password strength criteria from sources like NIST and NordPass (e.g., length over complexity, avoiding common passwords like "123456"). Learned: Basic environment troubleshooting (e.g., navigating cmd, fixing PATH issues) is essential; weak passwords are vulnerable to brute-force and dictionary attacks.
-Tuesday (Core Coding and Tweaks): Copied the base script, understood regex for character checks, fixed indentation errors, and experimented with tweaks like changing length to 12 chars, expanding the common passwords list (added "iloveyou"), and adjusting scoring thresholds for stricter ratings. Learned: Python's indentation matters a lot; small changes like variety requirements boost security against cracking.
-Thursday (Testing and Feedback): Ran edge cases (empty strings, single chars, all uppercase, no digits/specials, very long passwords) and verified each criterion with targeted tests (e.g., failing uppercase drops a point). Compared with NordPass—my tool is stricter on length but misses some patterns. Added feedback suggestions (e.g., "Add at least one digit"). Learned: Thorough testing reveals limitations (e.g., exact-match common checks miss substrings like "123" in "My123Pass!"); feedback makes the tool educational, aligning with real-world checkers.
-Friday (Polish and Reflection): Added a loop for multiple tests without restarting and a visual strength bar. Created this README and reflected on the process. Learned: Strong passwords need 12+ chars and mixed types to resist attacks; tools like NordPass detect patterns better, inspiring future improvements like substring checks or entropy calculation. Overall, debugging (e.g., PATH, indentation) built persistence, and the project showed how simple code can demonstrate cybersecurity principles ethically.
+1. Make sure **Python 3** is installed on your computer.
+2. Clone or download this repository:
 
-Future Ideas: Add a GUI with Tkinter, load larger common password dictionaries from files, calculate entropy using math libraries, or simulate brute-force times.
+   ```bash
+   git clone https://github.com/abbangura19-maker/password-strength-tester.git
+   cd password-strength-tester
+
+Or just download the password_tester.py file directly.
+
+Open a terminal/command prompt in the folder containing the script.
+
+Run:
+
+python password_tester.py
+
+Enter a password when prompted → get strength rating + suggestions
+
+Example session:
+
+Enter a password to test (or 'quit' to exit): 123456
+Password strength: Weak
+- Password should be at least 8 characters long.
+- Add at least one uppercase letter.
+- Add at least one lowercase letter.
+- Add at least one digit.
+- Add at least one special character.
+- This is a very common password!
+
+Enter a password to test (or 'quit' to exit): Tr#9pL@5qR7!
+Password strength: Strong
+[##########]  Great password!
+
+What I Learned (5-day beginner project)
+
+Python fundamentals: functions, loops, conditionals, user input
+Regular expressions (regex) for checking character types
+Basic cybersecurity concepts:
+Importance of password length vs complexity
+Risks of common/reused passwords
+Defense against brute-force and dictionary attacks
+
+Project workflow: setup → coding → testing edge cases → adding features → documentation
+Git & GitHub basics: init, add, commit, push, README writing
+
+Built following a structured Monday–Friday schedule (skipping Wednesday).
+
+Future Improvement Ideas
+
+Graphical interface with Tkinter
+Load large common password dictionaries from files
+Calculate actual password entropy
+Color-coded output in terminal
+Check against real breach databases (ethically)
+
+Skills Demonstrated
+
+Python programming
+Regular expressions
+Command-line application development
+Basic cybersecurity awareness
+Git version control & GitHub
+Writing clear documentation
+
+Feel free to use, fork, or improve it!
